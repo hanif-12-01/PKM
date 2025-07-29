@@ -160,6 +160,87 @@
       padding: 40px 0;
       margin-top: 100px;
     }
+    
+    /* Detail Section Styles */
+    .detail-section {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 40px;
+      margin-top: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    }
+    
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .detail-card {
+      background: var(--light);
+      border-radius: 15px;
+      padding: 25px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .detail-card h4 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+    
+    .detail-card ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    .detail-card li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .detail-card li:before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+    }
+    
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: var(--light);
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .comparison-table th {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      font-weight: 600;
+    }
+    
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .comparison-table tr:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    [data-theme="dark"] .comparison-table tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
   </style>
 </head>
 <body>
@@ -170,11 +251,9 @@
       <a href="#jenis" class="btn">Jelajahi PKM</a>
     </div>
   </section>
-
   <button style="position: fixed; top: 20px; right: 20px; z-index: 1001; background: #fff; border: none; padding: 10px 15px; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,.2)" onclick="toggleTheme()" aria-label="Toggle theme">
     <i id="themeIcon" class="fas fa-moon"></i>
   </button>
-
   <nav id="navbar">
     <ul>
       <li><a href="#jenis">Jenis PKM</a></li>
@@ -184,58 +263,293 @@
       <li><a href="#kontak">Kontak</a></li>
     </ul>
   </nav>
-
   <section id="jenis" class="section">
     <h2>Jenis Program PKM</h2>
     <div class="grid">
       <div class="card">
         <h3>PKM-RE: Riset Eksakta</h3>
         <p>Riset berbasis eksperimen dan analisis data untuk inovasi teknologi dan sains.</p>
-        <a href="pkm-re.html" class="btn">Lihat Detail</a>
+        <a href="#detail-re" class="btn">Lihat Detail</a>
       </div>
       <div class="card">
         <h3>PKM-RSH: Riset Sosial Humaniora</h3>
         <p>Riset sosial, budaya, ekonomi, hukum, dan humaniora untuk solusi masyarakat.</p>
-        <a href="pkm-rsh.html" class="btn">Lihat Detail</a>
+        <a href="#detail-rsh" class="btn">Lihat Detail</a>
       </div>
       <div class="card">
         <h3>PKM-PM: Pengabdian Masyarakat</h3>
         <p>Aksi nyata mahasiswa dalam membantu masyarakat berbasis ilmu pengetahuan.</p>
-        <a href="pkm-pm.html" class="btn">Lihat Detail</a>
+        <a href="#detail-pm" class="btn">Lihat Detail</a>
       </div>
       <div class="card">
         <h3>PKM-PI: Penerapan IPTEK</h3>
         <p>Penerapan teknologi tepat guna untuk peningkatan produktivitas masyarakat.</p>
-        <a href="pkm-pi.html" class="btn">Lihat Detail</a>
+        <a href="#detail-pi" class="btn">Lihat Detail</a>
       </div>
       <div class="card">
         <h3>PKM-KC: Karsa Cipta</h3>
         <p>Kreasi mahasiswa berupa prototipe produk teknologi atau karya inovatif.</p>
-        <a href="pkm-kc.html" class="btn">Lihat Detail</a>
+        <a href="#detail-kc" class="btn">Lihat Detail</a>
       </div>
       <div class="card">
         <h3>PKM-K: Kewirausahaan</h3>
         <p>Pelatihan dan penerapan bisnis berbasis inovasi dan kreativitas.</p>
-        <a href="pkm-k.html" class="btn">Lihat Detail</a>
+        <a href="#detail-k" class="btn">Lihat Detail</a>
       </div>
       <div class="card">
         <h3>PKM-KI: Karya Inovatif</h3>
         <p>Karya inovatif dalam bentuk produk atau sistem yang belum dipasarkan.</p>
-        <a href="pkm-ki.html" class="btn">Lihat Detail</a>
+        <a href="#detail-ki" class="btn">Lihat Detail</a>
       </div>
       <div class="card">
         <h3>PKM-AI: Artikel Ilmiah</h3>
         <p>Artikel ilmiah berbasis hasil penelitian atau kajian literatur.</p>
-        <a href="pkm-ai.html" class="btn">Lihat Detail</a>
+        <a href="#detail-ai" class="btn">Lihat Detail</a>
       </div>
       <div class="card">
         <h3>PKM-GFT: Gagasan Futuristik Tepat Guna</h3>
         <p>Gagasan inovatif masa depan yang relevan dan aplikatif.</p>
-        <a href="pkm-gft.html" class="btn">Lihat Detail</a>
+        <a href="#detail-gft" class="btn">Lihat Detail</a>
+      </div>
+      <div class="card">
+        <h3>PKM-VGK: Video Gagasan Konstruktif</h3>
+        <p>Penyampaian gagasan solutif dan konstruktif dalam bentuk video kreatif.</p>
+        <a href="#detail-vgk" class="btn">Lihat Detail</a>
+      </div>
+    </div>
+    
+    <!-- Detail Section for PKM Types -->
+    <div class="detail-section">
+      <h2>Detail Cabang Program PKM</h2>
+      
+      <!-- PKM Pendanaan Comparison Table -->
+      <h3>PKM Skema Pendanaan (8 Bidang)</h3>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Bidang PKM</th>
+            <th>Fokus Utama</th>
+            <th>Kebutuhan Mitra</th>
+            <th>Luaran Wajib Kunci</th>
+            <th>Batas Pendanaan Belmawa (Rp)</th>
+            <th>Pendanaan Wajib PT (Rp)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PKM-RE</td>
+            <td>Penelitian ilmiah eksakta untuk mengungkap hubungan sebab-akibat atau eksplorasi.</td>
+            <td>Tidak Wajib</td>
+            <td>Laporan Akhir, Artikel Ilmiah, Akun Medsos</td>
+            <td>6.000.000-10.000.000</td>
+            <td>Maks. 2.000.000</td>
+          </tr>
+          <tr>
+            <td>PKM-RSH</td>
+            <td>Penelitian ilmiah sosial-humaniora untuk menganalisis fenomena sosial, budaya, ekonomi.</td>
+            <td>Tidak Wajib</td>
+            <td>Laporan Akhir, Artikel Ilmiah, Akun Medsos</td>
+            <td>6.000.000-10.000.000</td>
+            <td>Maks. 2.000.000</td>
+          </tr>
+          <tr>
+            <td>PKM-K</td>
+            <td>Penciptaan produk (barang/jasa) kreatif dan inovatif untuk merintis usaha berorientasi profit.</td>
+            <td>Tidak Wajib</td>
+            <td>Laporan Akhir, Produk Usaha, Akun Medsos</td>
+            <td>6.000.000-10.000.000</td>
+            <td>Maks. 2.000.000</td>
+          </tr>
+          <tr>
+            <td>PKM-PM</td>
+            <td>Penerapan IPTEK untuk memberikan solusi pada permasalahan masyarakat non-profit.</td>
+            <td>Wajib (Non-Profit)</td>
+            <td>Laporan Akhir, Buku Pedoman Mitra, Akun Medsos</td>
+            <td>6.000.000-10.000.000</td>
+            <td>Maks. 2.000.000</td>
+          </tr>
+          <tr>
+            <td>PKM-PI</td>
+            <td>Penerapan IPTEK untuk memberikan solusi pada permasalahan dunia usaha profit.</td>
+            <td>Wajib (Profit)</td>
+            <td>Laporan Akhir, Buku Pedoman Mitra, Akun Medsos</td>
+            <td>6.000.000-10.000.000</td>
+            <td>Maks. 2.000.000</td>
+          </tr>
+          <tr>
+            <td>PKM-KC</td>
+            <td>Penciptaan karya fungsional berbasis karsa dan nalar dalam bentuk prototipe/purwarupa.</td>
+            <td>Tidak Wajib</td>
+            <td>Laporan Akhir, Prototipe, Video Prototipe, Akun Medsos</td>
+            <td>6.000.000-10.000.000</td>
+            <td>Maks. 2.000.000</td>
+          </tr>
+          <tr>
+            <td>PKM-KI</td>
+            <td>Penciptaan karya inovatif solutif berbasis IPTEK dalam bentuk produk skala penuh.</td>
+            <td>Tidak Wajib</td>
+            <td>Laporan Akhir, Produk Inovatif, Akun Medsos</td>
+            <td>6.000.000-10.000.000</td>
+            <td>Maks. 2.000.000</td>
+          </tr>
+          <tr>
+            <td>PKM-VGK</td>
+            <td>Penyampaian gagasan solutif dan konstruktif dalam bentuk video kreatif di YouTube.</td>
+            <td>Tidak Wajib</td>
+            <td>Laporan Akhir, Video Konten, Akun Medsos</td>
+            <td>6.000.000-10.000.000</td>
+            <td>Maks. 2.000.000</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <!-- PKM Insentif Comparison Table -->
+      <h3>PKM Skema Insentif (2 Bidang)</h3>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Bidang PKM</th>
+            <th>Fokus Utama</th>
+            <th>Sumber Karya</th>
+            <th>Luaran Utama</th>
+            <th>Nilai Insentif (Rp)</th>
+            <th>Bermuara di PIMNAS?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PKM-AI</td>
+            <td>Artikel ilmiah yang disusun dari kegiatan yang telah selesai dilaksanakan.</td>
+            <td>Retrospektif: Penelitian, KKN, Magang, PKM tahun sebelumnya.</td>
+            <td>Artikel Ilmiah (siap publikasi)</td>
+            <td>2.500.000</td>
+            <td>Tidak</td>
+          </tr>
+          <tr>
+            <td>PKM-GFT</td>
+            <td>Gagasan tertulis yang bersifat futuristik, visioner, dan konstruktif.</td>
+            <td>Prospektif: Imajinasi dan nalar mahasiswa didukung data.</td>
+            <td>Artikel Gagasan Futuristik Tertulis</td>
+            <td>2.500.000</td>
+            <td>Ya</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <!-- Detailed Information for Each PKM Type -->
+      <div class="detail-grid">
+        <div class="detail-card" id="detail-re">
+          <h4>PKM Riset Eksakta (PKM-RE)</h4>
+          <ul>
+            <li><strong>Tujuan:</strong> Memfasilitasi mahasiswa dalam melakukan penelitian ilmiah yang bertujuan mengungkap hubungan sebab-akibat, aksi-reaksi, merancang bangun suatu model, melakukan eksplorasi, mengembangkan materi alternatif, atau mengidentifikasi senyawa kimia aktif.</li>
+            <li><strong>Ruang Lingkup:</strong> Objek riset adalah fenomena alamiah yang dapat dijelaskan melalui hukum-hukum fisika, kimia, dan biologi. Pelaksanaan umumnya di laboratorium atau lapangan untuk pengambilan data primer.</li>
+            <li><strong>Luaran Wajib:</strong> Laporan Kemajuan, Laporan Akhir, Artikel Ilmiah, Akun Media Sosial.</li>
+            <li><strong>Kriteria Spesifik:</strong> Topik riset harus sesuai atau relevan dengan bidang ilmu ketua dan/atau anggota tim.</li>
+            <li><strong>Pendanaan:</strong> Rp 6.000.000 - 10.000.000 dari Belmawa + maks. Rp 2.000.000 dari PT.</li>
+          </ul>
+        </div>
+        
+        <div class="detail-card" id="detail-rsh">
+          <h4>PKM Riset Sosial Humaniora (PKM-RSH)</h4>
+          <ul>
+            <li><strong>Tujuan:</strong> Menumbuhkan minat dan mengasah kemampuan mahasiswa dalam meneliti fenomena sosial, perilaku manusia, serta isu-isu dalam bidang ekonomi, pendidikan, kesehatan, dan budaya.</li>
+            <li><strong>Ruang Lingkup:</strong> Objek riset mencakup interaksi dalam masyarakat, baik yang terkait dengan kearifan lokal maupun fenomena kontemporer.</li>
+            <li><strong>Luaran Wajib:</strong> Laporan Kemajuan, Laporan Akhir, Artikel Ilmiah, Akun Media Sosial.</li>
+            <li><strong>Kriteria Spesifik:</strong> Menggunakan metode riset yang relevan untuk ilmu-ilmu sosial dan humaniora (kualitatif, kuantitatif, atau campuran).</li>
+            <li><strong>Pendanaan:</strong> Rp 6.000.000 - 10.000.000 dari Belmawa + maks. Rp 2.000.000 dari PT.</li>
+          </ul>
+        </div>
+        
+        <div class="detail-card" id="detail-k">
+          <h4>PKM Kewirausahaan (PKM-K)</h4>
+          <ul>
+            <li><strong>Tujuan:</strong> Memotivasi dan membuka peluang bagi mahasiswa untuk menghasilkan produk (barang/jasa) unik dan inovatif sebagai bekal merintis usaha berorientasi profit.</li>
+            <li><strong>Ruang Lingkup:</strong> Fokus pada kreativitas komoditas usaha dan aktivitas bisnis yang dijalankan sepenuhnya oleh tim mahasiswa.</li>
+            <li><strong>Luaran Wajib:</strong> Laporan Kemajuan, Laporan Akhir, Produk dan Aktivitas Usaha, Akun Media Sosial.</li>
+            <li><strong>Kriteria Spesifik:</strong> Harus memuat analisis tajam mengenai kebutuhan dan peluang pasar, serta analisis ekonomi usaha yang menunjukkan potensi keberlanjutan bisnis.</li>
+            <li><strong>Pendanaan:</strong> Maksimum 60% untuk bahan habis pakai, 15% untuk sewa/jasa, 30% untuk transportasi lokal, 15% untuk biaya lain-lain (termasuk iklan medsos).</li>
+          </ul>
+        </div>
+        
+        <div class="detail-card" id="detail-pm">
+          <h4>PKM Pengabdian kepada Masyarakat (PKM-PM)</h4>
+          <ul>
+            <li><strong>Tujuan:</strong> Menumbuhkan rasa empati dan kepedulian sosial mahasiswa terhadap persoalan riil yang dihadapi masyarakat melalui penerapan IPTEK.</li>
+            <li><strong>Ruang Lingkup:</strong> Mitra sasaran adalah kelompok masyarakat non-profit (karang taruna, kelompok tani, panti asuhan, komunitas desa, sekolah).</li>
+            <li><strong>Luaran Wajib:</strong> Laporan Kemajuan, Laporan Akhir, Akun Media Sosial, Buku Pedoman Mitra (panduan operasional agar mitra dapat melanjutkan program mandiri).</li>
+            <li><strong>Kriteria Spesifik:</strong> Kehadiran mitra wajib dan harus dibuktikan dengan Surat Pernyataan Kesediaan Bekerjasama. Bidang kajian tim tidak harus relevan langsung dengan solusi.</li>
+            <li><strong>Pendanaan:</strong> Rp 6.000.000 - 10.000.000 dari Belmawa + maks. Rp 2.000.000 dari PT. Maks. Rp 500.000 untuk iklan berbayar.</li>
+          </ul>
+        </div>
+        
+        <div class="detail-card" id="detail-pi">
+          <h4>PKM Penerapan IPTEK (PKM-PI)</h4>
+          <ul>
+            <li><strong>Tujuan:</strong> Memberikan solusi berbasis IPTEK (teknologi/manajemen) terhadap persoalan yang dihadapi dunia usaha profit.</li>
+            <li><strong>Ruang Lingkup:</strong> Mitra sasaran adalah masyarakat berorientasi profit (UMKM, koperasi, industri kecil). Tujuan utama meningkatkan kinerja mitra.</li>
+            <li><strong>Luaran Wajib:</strong> Laporan Kemajuan, Laporan Akhir, Buku Pedoman Mitra (petunjuk operasional teknologi/sistem manajemen), Akun Media Sosial.</li>
+            <li><strong>Kriteria Spesifik:</strong> Kehadiran mitra wajib dan harus dibuktikan dengan Surat Pernyataan Kesediaan Bekerjasama.</li>
+            <li><strong>Pendanaan:</strong> Rp 6.000.000 - 10.000.000 dari Belmawa + maks. Rp 2.000.000 dari PT. Maks. Rp 500.000 untuk iklan berbayar.</li>
+          </ul>
+        </div>
+        
+        <div class="detail-card" id="detail-kc">
+          <h4>PKM Karsa Cipta (PKM-KC)</h4>
+          <ul>
+            <li><strong>Tujuan:</strong> Mewujudkan ide-ide konstruktif berbasis karsa dan nalar ke dalam bentuk produk fungsional (purwarupa/prototipe, sistem, atau desain).</li>
+            <li><strong>Ruang Lingkup:</strong> Fokus pada proses penciptaan yang kreatif dan inovatif. Produk belum tentu memberikan kemanfaatan langsung bagi pihak lain.</li>
+            <li><strong>Luaran Wajib:</strong> Laporan Kemajuan, Laporan Akhir, Prototipe atau Produk Fungsional, Video Prototipe, Akun Media Sosial.</li>
+            <li><strong>Kriteria Spesifik:</strong> Tidak mewajibkan mitra. Proposal berfokus pada penjelasan desain teknis, tahapan pembuatan, dan keunggulan karsa cipta.</li>
+            <li><strong>Pendanaan:</strong> Rp 6.000.000 - 10.000.000 dari Belmawa + maks. Rp 2.000.000 dari PT.</li>
+          </ul>
+        </div>
+        
+        <div class="detail-card" id="detail-ki">
+          <h4>PKM Karya Inovatif (PKM-KI)</h4>
+          <ul>
+            <li><strong>Tujuan:</strong> Mendorong mahasiswa menghasilkan karya fungsional inovatif, solutif, dan sudah mencapai skala penuh (bukan prototipe).</li>
+            <li><strong>Ruang Lingkup:</strong> Produk berbasis IPTEK yang lebih siap guna. Tidak harus diserahkan pada mitra tertentu.</li>
+            <li><strong>Luaran Wajib:</strong> Laporan Kemajuan, Laporan Akhir, Produk Inovatif Skala Penuh, Akun Media Sosial.</li>
+            <li><strong>Kriteria Spesifik:</strong> Tidak wajib memiliki mitra, tetapi harus menjelaskan problematika faktual dan target pengguna.</li>
+            <li><strong>Pendanaan:</strong> Biaya pembelian satu jenis alat/bahan maks. Rp 1.000.000/item. Total biaya publikasi medsos maks. Rp 500.000.</li>
+          </ul>
+        </div>
+        
+        <div class="detail-card" id="detail-vgk">
+          <h4>PKM Video Gagasan Konstruktif (PKM-VGK)</h4>
+          <ul>
+            <li><strong>Tujuan:</strong> Mewadahi gagasan kreatif dan solutif mahasiswa dikomunikasikan dalam bentuk video menarik di YouTube.</li>
+            <li><strong>Ruang Lingkup:</strong> Gagasan harus bersifat konstruktif dan merespon isu aktual, dengan penekanan pada tema SDGs.</li>
+            <li><strong>Luaran Wajib:</strong> Laporan Kemajuan, Laporan Akhir, Konten Video (3-5 menit) di YouTube, Akun Media Sosial.</li>
+            <li><strong>Kriteria Spesifik:</strong> Fokus pada identifikasi masalah mendalam, formulasi gagasan solutif jelas, dan skenario konten video kreatif efektif.</li>
+            <li><strong>Pendanaan:</strong> Rp 6.000.000 - 10.000.000 dari Belmawa + maks. Rp 2.000.000 dari PT (untuk produksi video).</li>
+          </ul>
+        </div>
+        
+        <div class="detail-card" id="detail-ai">
+          <h4>PKM Artikel Ilmiah (PKM-AI)</h4>
+          <ul>
+            <li><strong>Tujuan:</strong> Memberikan pengalaman mahasiswa mengkomunikasikan hasil kegiatan akademik ke format karya tulis ilmiah standar.</li>
+            <li><strong>Karakteristik:</strong> Sifat retrospektif (melaporkan kegiatan yang telah selesai).</li>
+            <li><strong>Sumber Karya:</strong> Fleksibel - hasil penelitian skripsi, laporan magang/KKN, atau PKM tahun sebelumnya.</li>
+            <li><strong>Luaran Wajib:</strong> Artikel Ilmiah dengan struktur standar (Judul, Penulis, Abstrak, Pendahuluan, Metode, Hasil, Pembahasan, Kesimpulan, Daftar Pustaka).</li>
+            <li><strong>Insentif:</strong> Rp 2.500.000. Tidak bermuara di PIMNAS.</li>
+          </ul>
+        </div>
+        
+        <div class="detail-card" id="detail-gft">
+          <h4>PKM Gagasan Futuristik Tertulis (PKM-GFT)</h4>
+          <ul>
+            <li><strong>Tujuan:</strong> Mewadahi mahasiswa menuangkan gagasan kreatif yang bersifat futuristik, visioner, dan konstruktif sebagai respons intelektual terhadap persoalan aktual.</li>
+            <li><strong>Karakteristik:</strong> Gagasan merupakan konsep perubahan/pengembangan jangka panjang yang realistis dan berpotensi diimplementasikan.</li>
+            <li><strong>Sumber Karya:</strong> Daya imajinasi dan nalar kritis mahasiswa, didukung data, fakta, dan referensi kredibel. Harus asli (tidak menggunakan AI generatif).</li>
+            <li><strong>Luaran Wajib:</strong> Artikel Gagasan Futuristik Tertulis dengan sistematika: Pendahuluan (pemicu gagasan), Gagasan (solusi, pihak terlibat, langkah strategis), Kesimpulan (dampak positif).</li>
+            <li><strong>Insentif:</strong> Rp 2.500.000. Bermuara di PIMNAS (kesempatan presentasi gagasan di ajang nasional).</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
-
   <section id="panduan" class="section">
     <h2>Panduan Lengkap</h2>
     <div class="grid">
@@ -263,7 +577,6 @@
       </div>
     </div>
   </section>
-
   <section id="jadwal" class="section">
     <h2>Timeline PKM 2025</h2>
     <div class="grid">
@@ -275,7 +588,6 @@
       <div class="card"><h4>Juni</h4><p>PIMNAS Nasional</p></div>
     </div>
   </section>
-
   <section id="faq" class="section">
     <h2>Frequently Asked Questions</h2>
     <div class="faq">
@@ -293,7 +605,6 @@
       </details>
     </div>
   </section>
-
   <section id="kontak" class="section">
     <h2>Hubungi Kami</h2>
     <div class="card">
@@ -304,11 +615,9 @@
       </p>
     </div>
   </section>
-
   <footer>
     &copy; 2025 PKM Indonesia | Diktiristek RI
   </footer>
-
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
