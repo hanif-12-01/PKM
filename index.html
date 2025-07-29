@@ -38,8 +38,11 @@
       transition: var(--transition);
       line-height: 1.6;
     }
+
+    /* Hero Section */
     .hero {
       height: 100vh;
+      min-height: 500px; /* Minimum height for small screens */
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       display: flex;
       align-items: center;
@@ -64,18 +67,18 @@
       max-width: 800px;
     }
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 2.5rem; /* Reduced for mobile */
       font-weight: 700;
       margin-bottom: 1rem;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.1rem; /* Reduced for mobile */
       opacity: 0.9;
       margin-bottom: 2rem;
     }
     .btn {
-      padding: 15px 35px;
+      padding: 12px 30px; /* Adjusted padding */
       border: none;
       border-radius: 50px;
       background: #fff;
@@ -86,16 +89,19 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       text-decoration: none;
       display: inline-block;
+      font-size: 1rem; /* Added font size */
     }
     .btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     }
+
+    /* Navigation */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 20px 0;
+      padding: 15px 0; /* Reduced padding */
       z-index: 1000;
       backdrop-filter: blur(10px);
       background: rgba(255, 255, 255, 0.1);
@@ -111,135 +117,306 @@
     nav ul {
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: 20px; /* Reduced gap */
       list-style: none;
+      flex-wrap: wrap; /* Allow wrapping on small screens */
     }
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
       transition: var(--transition);
+      font-size: 0.9rem; /* Reduced font size */
     }
     nav.scrolled a,
     [data-theme="dark"] nav a {
       color: var(--text);
     }
+
+    /* Theme Toggle Button */
+    #themeToggle {
+      position: fixed;
+      top: 15px; /* Adjusted top position */
+      right: 15px; /* Adjusted right position */
+      z-index: 1001;
+      background: #fff;
+      border: none;
+      padding: 8px 12px; /* Reduced padding */
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,.2);
+    }
+    [data-theme="dark"] #themeToggle {
+      background: var(--card);
+    }
+
+    /* Sections */
     .section {
-      padding: 100px 10%;
+      padding: 60px 5%; /* Reduced padding for mobile */
       max-width: 1400px;
       margin: auto;
     }
     .section h2 {
-      font-size: 2.5rem;
+      font-size: 2rem; /* Reduced for mobile */
       font-weight: 700;
-      margin-bottom: 40px;
+      margin-bottom: 30px; /* Reduced margin */
       text-align: center;
       background: linear-gradient(135deg, var(--primary), var(--accent));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    /* Grid Layouts */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted min width */
+      gap: 20px; /* Reduced gap */
     }
+
+    /* Cards */
     .card {
       background: var(--card);
-      border-radius: 20px;
-      padding: 40px;
+      border-radius: 15px; /* Slightly reduced radius */
+      padding: 25px; /* Reduced padding */
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
       transition: var(--transition);
     }
     .card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-5px); /* Reduced hover effect */
     }
-    footer {
-      background: var(--dark);
-      color: #fff;
-      text-align: center;
-      padding: 40px 0;
-      margin-top: 100px;
+    .card h3 {
+      font-size: 1.3rem; /* Reduced font size */
+      margin-bottom: 10px;
     }
-    
-    /* Detail Section Styles */
+    .card p {
+      font-size: 0.95rem; /* Reduced font size */
+      margin-bottom: 15px;
+    }
+
+    /* Detail Section */
     .detail-section {
       background: var(--card);
-      border-radius: 20px;
-      padding: 40px;
-      margin-top: 30px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-    }
-    
-    .detail-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-    
-    .detail-card {
-      background: var(--light);
       border-radius: 15px;
       padding: 25px;
+      margin-top: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    }
+    .detail-section h2 {
+      font-size: 1.8rem; /* Reduced font size */
+      margin-bottom: 20px;
+    }
+    .detail-section h3 {
+      font-size: 1.4rem; /* Reduced font size */
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .detail-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 20px;
       border-left: 4px solid var(--primary);
     }
-    
     .detail-card h4 {
       color: var(--primary);
-      margin-bottom: 15px;
-      font-size: 1.3rem;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
     }
-    
     .detail-card ul {
       list-style-type: none;
       padding-left: 0;
     }
-    
     .detail-card li {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       padding-left: 20px;
       position: relative;
+      font-size: 0.9rem;
     }
-    
     .detail-card li:before {
       content: "•";
       color: var(--accent);
       position: absolute;
       left: 0;
     }
-    
+
+    /* Tables */
     .comparison-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0;
+      margin: 15px 0;
       background: var(--light);
-      border-radius: 15px;
+      border-radius: 12px;
       overflow: hidden;
+      font-size: 0.85rem; /* Reduced font size */
     }
-    
     .comparison-table th,
     .comparison-table td {
-      padding: 15px;
+      padding: 10px; /* Reduced padding */
       text-align: left;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
-    
     .comparison-table th {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
       font-weight: 600;
     }
-    
     .comparison-table tr:last-child td {
       border-bottom: none;
     }
-    
     .comparison-table tr:nth-child(even) {
       background-color: rgba(0, 0, 0, 0.02);
     }
-    
     [data-theme="dark"] .comparison-table tr:nth-child(even) {
       background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    /* FAQ */
+    .faq details {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .faq summary {
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      position: relative;
+      padding-left: 25px;
+    }
+    .faq summary::before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .faq details[open] summary::before {
+      content: "-";
+    }
+    .faq p {
+      margin-top: 10px;
+      padding-left: 25px;
+      font-size: 0.95rem;
+    }
+
+    /* Contact */
+    #kontak .card {
+      text-align: center;
+      padding: 30px;
+    }
+    #kontak .card a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    #kontak .card a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+
+    /* Media Queries for Larger Screens */
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+      .hero p {
+        font-size: 1.2rem;
+      }
+      .btn {
+        padding: 15px 35px;
+        font-size: 1rem;
+      }
+      nav {
+        padding: 20px 0;
+      }
+      nav ul {
+        gap: 40px;
+        flex-wrap: nowrap;
+      }
+      nav a {
+        font-size: 1rem;
+      }
+      .section {
+        padding: 100px 10%;
+      }
+      .section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+      }
+      .grid {
+        gap: 30px;
+      }
+      .card {
+        padding: 40px;
+        border-radius: 20px;
+      }
+      .card h3 {
+        font-size: 1.5rem;
+      }
+      .card p {
+        font-size: 1rem;
+      }
+      .detail-section {
+        padding: 40px;
+        border-radius: 20px;
+      }
+      .detail-section h2 {
+        font-size: 2.2rem;
+      }
+      .detail-section h3 {
+        font-size: 1.6rem;
+      }
+      .detail-grid {
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .detail-card {
+        padding: 25px;
+        border-radius: 15px;
+      }
+      .detail-card h4 {
+        font-size: 1.3rem;
+      }
+      .detail-card li {
+        font-size: 1rem;
+      }
+      .comparison-table {
+        font-size: 1rem;
+      }
+      .comparison-table th,
+      .comparison-table td {
+        padding: 15px;
+      }
+      .faq p {
+        font-size: 1rem;
+      }
+      #kontak .card {
+        padding: 40px;
+      }
+      footer {
+        padding: 40px 0;
+        margin-top: 100px;
+        font-size: 1rem;
+      }
+      #themeToggle {
+        top: 20px;
+        right: 20px;
+        padding: 10px 15px;
+      }
     }
   </style>
 </head>
@@ -251,9 +428,11 @@
       <a href="#jenis" class="btn">Jelajahi PKM</a>
     </div>
   </section>
-  <button style="position: fixed; top: 20px; right: 20px; z-index: 1001; background: #fff; border: none; padding: 10px 15px; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,.2)" onclick="toggleTheme()" aria-label="Toggle theme">
+  
+  <button id="themeToggle" aria-label="Toggle theme">
     <i id="themeIcon" class="fas fa-moon"></i>
   </button>
+  
   <nav id="navbar">
     <ul>
       <li><a href="#jenis">Jenis PKM</a></li>
@@ -263,6 +442,7 @@
       <li><a href="#kontak">Kontak</a></li>
     </ul>
   </nav>
+  
   <section id="jenis" class="section">
     <h2>Jenis Program PKM</h2>
     <div class="grid">
@@ -318,11 +498,9 @@
       </div>
     </div>
     
-    <!-- Detail Section for PKM Types -->
     <div class="detail-section">
       <h2>Detail Cabang Program PKM</h2>
       
-      <!-- PKM Pendanaan Comparison Table -->
       <h3>PKM Skema Pendanaan (8 Bidang)</h3>
       <table class="comparison-table">
         <thead>
@@ -403,7 +581,6 @@
         </tbody>
       </table>
       
-      <!-- PKM Insentif Comparison Table -->
       <h3>PKM Skema Insentif (2 Bidang)</h3>
       <table class="comparison-table">
         <thead>
@@ -436,7 +613,6 @@
         </tbody>
       </table>
       
-      <!-- Detailed Information for Each PKM Type -->
       <div class="detail-grid">
         <div class="detail-card" id="detail-re">
           <h4>PKM Riset Eksakta (PKM-RE)</h4>
@@ -448,7 +624,6 @@
             <li><strong>Pendanaan:</strong> Rp 6.000.000 - 10.000.000 dari Belmawa + maks. Rp 2.000.000 dari PT.</li>
           </ul>
         </div>
-        
         <div class="detail-card" id="detail-rsh">
           <h4>PKM Riset Sosial Humaniora (PKM-RSH)</h4>
           <ul>
@@ -459,7 +634,6 @@
             <li><strong>Pendanaan:</strong> Rp 6.000.000 - 10.000.000 dari Belmawa + maks. Rp 2.000.000 dari PT.</li>
           </ul>
         </div>
-        
         <div class="detail-card" id="detail-k">
           <h4>PKM Kewirausahaan (PKM-K)</h4>
           <ul>
@@ -470,7 +644,6 @@
             <li><strong>Pendanaan:</strong> Maksimum 60% untuk bahan habis pakai, 15% untuk sewa/jasa, 30% untuk transportasi lokal, 15% untuk biaya lain-lain (termasuk iklan medsos).</li>
           </ul>
         </div>
-        
         <div class="detail-card" id="detail-pm">
           <h4>PKM Pengabdian kepada Masyarakat (PKM-PM)</h4>
           <ul>
@@ -481,7 +654,6 @@
             <li><strong>Pendanaan:</strong> Rp 6.000.000 - 10.000.000 dari Belmawa + maks. Rp 2.000.000 dari PT. Maks. Rp 500.000 untuk iklan berbayar.</li>
           </ul>
         </div>
-        
         <div class="detail-card" id="detail-pi">
           <h4>PKM Penerapan IPTEK (PKM-PI)</h4>
           <ul>
@@ -492,7 +664,6 @@
             <li><strong>Pendanaan:</strong> Rp 6.000.000 - 10.000.000 dari Belmawa + maks. Rp 2.000.000 dari PT. Maks. Rp 500.000 untuk iklan berbayar.</li>
           </ul>
         </div>
-        
         <div class="detail-card" id="detail-kc">
           <h4>PKM Karsa Cipta (PKM-KC)</h4>
           <ul>
@@ -503,7 +674,6 @@
             <li><strong>Pendanaan:</strong> Rp 6.000.000 - 10.000.000 dari Belmawa + maks. Rp 2.000.000 dari PT.</li>
           </ul>
         </div>
-        
         <div class="detail-card" id="detail-ki">
           <h4>PKM Karya Inovatif (PKM-KI)</h4>
           <ul>
@@ -514,7 +684,6 @@
             <li><strong>Pendanaan:</strong> Biaya pembelian satu jenis alat/bahan maks. Rp 1.000.000/item. Total biaya publikasi medsos maks. Rp 500.000.</li>
           </ul>
         </div>
-        
         <div class="detail-card" id="detail-vgk">
           <h4>PKM Video Gagasan Konstruktif (PKM-VGK)</h4>
           <ul>
@@ -525,7 +694,6 @@
             <li><strong>Pendanaan:</strong> Rp 6.000.000 - 10.000.000 dari Belmawa + maks. Rp 2.000.000 dari PT (untuk produksi video).</li>
           </ul>
         </div>
-        
         <div class="detail-card" id="detail-ai">
           <h4>PKM Artikel Ilmiah (PKM-AI)</h4>
           <ul>
@@ -536,7 +704,6 @@
             <li><strong>Insentif:</strong> Rp 2.500.000. Tidak bermuara di PIMNAS.</li>
           </ul>
         </div>
-        
         <div class="detail-card" id="detail-gft">
           <h4>PKM Gagasan Futuristik Tertulis (PKM-GFT)</h4>
           <ul>
@@ -550,6 +717,7 @@
       </div>
     </div>
   </section>
+  
   <section id="panduan" class="section">
     <h2>Panduan Lengkap</h2>
     <div class="grid">
@@ -577,6 +745,7 @@
       </div>
     </div>
   </section>
+  
   <section id="jadwal" class="section">
     <h2>Timeline PKM 2025</h2>
     <div class="grid">
@@ -588,6 +757,7 @@
       <div class="card"><h4>Juni</h4><p>PIMNAS Nasional</p></div>
     </div>
   </section>
+  
   <section id="faq" class="section">
     <h2>Frequently Asked Questions</h2>
     <div class="faq">
@@ -605,6 +775,7 @@
       </details>
     </div>
   </section>
+  
   <section id="kontak" class="section">
     <h2>Hubungi Kami</h2>
     <div class="card">
@@ -615,22 +786,32 @@
       </p>
     </div>
   </section>
+  
   <footer>
     &copy; 2025 PKM Indonesia | Diktiristek RI
   </footer>
+  
   <script>
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         if (this.getAttribute('href').length > 1) {
           e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }
       });
     });
+
+    // Navbar scroll effect
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('navbar');
       nav.classList.toggle('scrolled', window.scrollY > 100);
     });
+
+    // Theme toggle
     function toggleTheme() {
       const body = document.body;
       const icon = document.getElementById('themeIcon');
@@ -642,6 +823,21 @@
         icon.className = 'fas fa-sun';
       }
     }
+
+    document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+    // FAQ toggle
+    const faqItems = document.querySelectorAll('.faq details');
+    faqItems.forEach(item => {
+      item.addEventListener('toggle', function() {
+        const summary = this.querySelector('summary');
+        if (this.open) {
+          summary.setAttribute('aria-expanded', 'true');
+        } else {
+          summary.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
   </script>
 </body>
 </html>
